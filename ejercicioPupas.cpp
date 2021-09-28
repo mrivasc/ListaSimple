@@ -27,7 +27,16 @@ List::List(){
     head = nullptr;
 }
 
-List::~List() {}
+List::~List(){
+    Node *p=nullptr;
+
+    p = head;
+    while(head){
+        p = head;
+        head = head->next;
+        delete p;
+    }
+}
 
 void menu(){
     List L;
